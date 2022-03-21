@@ -1,0 +1,159 @@
+@import "colors";
+@import "variables";
+
+.navbar {
+    background-size: cover;
+    background-color: $global_white;
+    overflow: hidden;
+
+    &-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 75%;
+        margin: 0px auto;
+        height: 100px;
+        padding-top: 40px;
+
+        &-logo-part {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            h1 {
+                a {
+                    cursor: pointer;
+                    text-decoration: none;
+                    outline: transparent solid 2px;
+                    outline-offset: 2px;
+                    color: inherit;
+                    display: flex;
+                    -webkit-box-pack: start;
+                    justify-content: flex-start;
+                    transition: color 0.15s ease-out 0s;
+                    -webkit-box-align: center;
+                    align-items: center;
+
+                    &:hover {
+                        color: $global_accent;
+                    }
+                }
+            }
+        }
+
+        &-search-part {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            &-social-icon {
+                margin-left: $space-8;
+                cursor: pointer;
+                text-decoration: none;
+                outline: transparent solid 2px;
+                outline-offset: 2px;
+                color: inherit;
+                display: flex;
+                -webkit-box-pack: start;
+                justify-content: flex-start;
+                transition: color 0.15s ease-out 0s;
+                -webkit-box-align: center;
+                align-items: center;
+
+                &:hover {
+                    color: $global_accent;
+                }
+            }
+
+            &-wrapper {
+                display: flex;
+                margin-left: 20px;
+
+                &-search-icon {
+                    cursor: pointer;
+                    text-decoration: none;
+                    outline: transparent solid 2px;
+                    outline-offset: 2px;
+                    color: inherit;
+                    display: flex;
+                    -webkit-box-pack: start;
+                    justify-content: flex-start;
+                    transition: color 0.15s ease-out 0s;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    background-color: $global_black;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    border-radius: 1.5rem;
+
+                    i {
+                        color: $global_white;
+                        font-size: 14px;
+                    }
+
+                    &:hover {
+                        background-color: $global_accent;
+                    }
+                }
+            }
+        }
+    }
+
+    &-sticky-wrapper {
+        height: 57.35px;
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        background: $global_white;
+
+        &-container {
+            -webkit-transition: .3s all ease;
+            -o-transition: .3s all ease;
+            transition: .3s all ease;
+            border-bottom: 1px solid $global_gray;
+            margin-bottom: 0;
+            z-index: 1999;
+            width: 100%;
+            background: $global_white;
+            padding-bottom: $sizes-2 !important;
+            padding-top: $sizes-2 !important;
+            padding-left: 0 !important;
+
+            &-main-div {
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 5px;
+                margin-right: auto;
+                margin-left: auto;
+                max-width: 75%;
+
+                &-site-navigation {
+
+                    ul {
+                        margin-left: 0;
+                        margin-bottom: 0;
+                        display: block !important;
+
+                        li {
+                            display: inline-block;
+
+                            a {
+                                color: $global_black;
+                                padding-left: 0;
+                                text-transform: uppercase;
+                                font-size: $fontSizes-sm;
+                                letter-spacing: .05rem;
+                                font-weight: $fontWeights-normal;
+                                display: inline-block;
+                                text-decoration: none !important;
+                                color: $global_black;
+                                padding-top: $space-2;
+                                padding-bottom: $space-2;
+                                padding-right: $space-10;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
