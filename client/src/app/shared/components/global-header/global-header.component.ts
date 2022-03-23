@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Link } from '../../models/menu.model';
 
 @Component({
   selector: 'app-global-header',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./global-header.component.scss']
 })
 export class GlobalHeaderComponent implements OnInit {
+  isModalOpen:boolean = false;
 
-  constructor() { }
+  menuItems:any = [];
+
+  constructor() {
+    this.menuItems.push(new Link('Home', ''), new Link('Categories', ''), new Link('Home', ''), new Link('Politics', ''), new Link('Business', ''), new Link('Health', ''), new Link('Design', ''), new Link('Sport', ''), new Link('Contact', ''))
+   }
 
   ngOnInit(): void {
+    console.log(this.menuItems);
+  }
+
+  onShowMobileMenuModal() {
+    this.isModalOpen = !this.isModalOpen;    
   }
 
 }

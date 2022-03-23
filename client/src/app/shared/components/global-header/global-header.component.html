@@ -21,10 +21,12 @@
       </div>
     </div>
   </div>
-  <div id="sticky-wrapper" class="navbar-sticky-wrapper" style="height: 54.75px">
-    <div
-      class="navbar-sticky-wrapper-container"
-    >
+  <div
+    id="sticky-wrapper"
+    class="navbar-sticky-wrapper"
+    style="height: 54.75px"
+  >
+    <div class="navbar-sticky-wrapper-container">
       <div class="navbar-sticky-wrapper-container-main-div">
         <div class="d-flex align-items-center">
           <div class="mr-auto">
@@ -32,42 +34,9 @@
               class="navbar-sticky-wrapper-container-main-div-site-navigation position-relative text-right"
               role="navigation"
             >
-              <ul
-                class="mr-auto pl-0"
-              >
-                <li class="active">
-                  <a href="index.html" class="text-left">Home</a>
-                </li>
-                <li>
-                  <a href="categories.html" class="text-left"
-                    >Categories</a
-                  >
-                </li>
-                <li>
-                  <a href="categories.html" class="text-left"
-                    >Politics</a
-                  >
-                </li>
-                <li>
-                  <a href="categories.html" class="text-left"
-                    >Business</a
-                  >
-                </li>
-                <li>
-                  <a href="categories.html" class="text-left"
-                    >Health</a
-                  >
-                </li>
-                <li>
-                  <a href="categories.html" class="text-left"
-                    >Design</a
-                  >
-                </li>
-                <li>
-                  <a href="categories.html" class="text-left">Sport</a>
-                </li>
-                <li>
-                  <a href="contact.html" class="text-left">Contact</a>
+              <ul class="mr-auto pl-0">
+                <li class="active" *ngFor="let item of menuItems; index as i">
+                  <a href="index.html" class="text-left">{{item?.name}}</a>
                 </li>
               </ul>
             </nav>
@@ -76,4 +45,95 @@
       </div>
     </div>
   </div>
+  <div class="navbar-mobile-container">
+    <div class="navbar-mobile-container-wrapper">
+      <div class="navbar-mobile-container-wrapper-logo">
+        <h1>
+          <a routerLink="/home">Blog</a>
+        </h1>
+        <a
+          (click)="onShowMobileMenuModal()"
+          class="navbar-mobile-container-wrapper-logo-hamburger-icon"
+          ><span><i class="fa-solid fa-bars"></i></span
+        ></a>
+      </div>
+      <div class="navbar-mobile-container-wrapper-search-part">
+        <div class="navbar-mobile-container-wrapper-search-part-input">
+          <input type="text" [placeholder]="'Search...'" class="form-control" />
+        </div>
+        <div class="navbar-mobile-container-wrapper-search-part-icon-wrapper">
+          <a href="#" class="navbar-mobile-container-wrapper-search-part-icon-wrapper-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>
+<div class="mobile-menu-modal" [style.display]="isModalOpen ? 'block' : 'none'" id="mobile-menu-modal">
+  <div class="mobile-menu-modal-overlay"></div>
+  <div class="mobile-menu-modal-body">
+    <div
+      data-focus-guard="true"
+      tabindex="0"
+      style="
+        width: 1px;
+        height: 0px;
+        padding: 0px;
+        overflow: hidden;
+        position: fixed;
+        top: 1px;
+        left: 1px;
+      "
+    ></div>
+    <div
+      data-focus-guard="true"
+      tabindex="1"
+      style="
+        width: 1px;
+        height: 0px;
+        padding: 0px;
+        overflow: hidden;
+        position: fixed;
+        top: 1px;
+        left: 1px;
+      "
+    ></div>
+    <div class=""></div>
+    <div class="mobile-menu-modal-content"  [class.mobile-menu-modal-content-animation]="isModalOpen === true">
+      <button
+        type="button"
+        aria-label="Close"
+        class="mobile-menu-modal-close-btn"
+        (click)="onShowMobileMenuModal()"
+      >
+        <svg viewBox="0, 0, 32, 32" focusable="false" class="btn-svg">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M17.6 16.0001L24.8001 8.80009L23.2001 7.20009L16 14.4001L8.79996 7.20004L7.19996 8.80004L14.4 16.0001L7.20009 23.2001L8.80009 24.8001L16 17.6001L23.2 24.8L24.8 23.2L17.6 16.0001Z"
+            fill="black"
+          ></path>
+        </svg>
+      </button>
+      <div class="modal-body">
+        <nav
+          class="modal-nav"
+          itemscope=""
+          itemtype="http://schema.org/SiteNavigationElement"
+        >
+          <meta itemprop="name" content="Navigation Menu" />
+          <a *ngFor="let item of menuItems; index as i" class="modal-nav-link" itemprop="url" href="tel:+888-278-7772">
+            <div class="modal-nav-link-element">
+              <div class="nav-link-div">
+                <span itemprop="name">
+                  {{item?.name}}
+                </span>
+              </div>
+            </div>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

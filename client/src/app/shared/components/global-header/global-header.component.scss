@@ -156,4 +156,314 @@
             }
         }
     }
+
+    &-mobile-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .navbar {
+        &-container {
+            display: none;
+        }
+
+        &-sticky-wrapper {
+            display: none;
+        }
+
+        &-mobile-container {
+            display: block;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+
+            &-wrapper {
+
+                &-logo {
+                    display: grid;
+                    grid-template-columns: 75% 25%;
+                    grid-template-rows: auto;
+
+                    h1 {
+                        a {
+                            cursor: pointer;
+                            text-decoration: none;
+                            outline: transparent solid 2px;
+                            outline-offset: 2px;
+                            color: inherit;
+                            display: flex;
+                            -webkit-box-pack: start;
+                            justify-content: flex-start;
+                            transition: color 0.15s ease-out 0s;
+                            -webkit-box-align: center;
+                            align-items: center;
+        
+                            &:hover {
+                                color: $global_accent;
+                            }
+                        }
+                    }
+
+                    &-hamburger-icon {
+                        color: $global_black;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+
+                        span {
+                            font-size: $fontSizes-3xl;
+                        }
+                    }
+                }
+
+                &-search-part {
+                    display: grid;
+                    column-gap: 10px;
+
+                    &-icon-wrapper {
+                        grid-column-end: 3;
+                        display: flex;
+                        justify-content: flex-end;
+
+                        &-icon {
+                            width: fit-content;
+                            cursor: pointer;
+                            text-decoration: none;
+                            outline: transparent solid 2px;
+                            outline-offset: 2px;
+                            color: inherit;
+                            display: flex;
+                            -webkit-box-pack: start;
+                            justify-content: flex-start;
+                            transition: color 0.15s ease-out 0s;
+                            -webkit-box-align: center;
+                            align-items: center;
+                            background-color: $global_black;
+                            padding-left: 30px;
+                            padding-right: 30px;
+                            border-radius: 1.5rem;
+    
+                            i {
+                                color: $global_white;
+                                font-size: 14px;
+                            }
+    
+                            &:hover {
+                                background-color: $global_accent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.get-mobile-menu-button {
+    display: inline-flex;
+    appearance: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    place-content: center;
+    user-select: none;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    width: $sizes-full;
+    line-height: 1.2;
+    border-radius: 0px;
+    font-weight: 500;
+    transition-property: $transition_property_common;
+    transition-duration: $transition-duration-normal;
+    text-transform: uppercase;
+    border-color: $global_accent;
+    letter-spacing: 1px;
+    height: 70px;
+    min-width: $sizes-10;
+    font-size: 14px;
+    padding-inline-start: $sizes-10;
+    padding-inline-end: $sizes-10;
+    padding: 24px;
+    background: $global_accent;
+    color: $global_white;
+    
+}
+
+.get-mobile-menu-button:hover {
+    background: $global_black;
+}
+
+.mobile-menu-modal-overlay {
+    opacity: 1;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    z-index: $zIndices-overlay;
+}
+
+.mobile-menu-modal-body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: $zIndices-modal;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+@keyframes mobile-menu-modal-animation {
+    from {
+        transform: translateX(100%);
+    } to {
+        transform: translateX(0%);
+    }
+}
+
+.mobile-menu-modal-content-animation {
+    animation: mobile-menu-modal-animation 300ms ease-out 0s 1;
+}
+
+.mobile-menu-modal-content {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    transform: translateX(0%) translateY(0px) translateZ(0px);
+    max-width: 300px !important;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    z-index: $zIndices-modal;
+    max-height: 100vh;
+    background: $global_white;
+    color: inherit;
+    box-shadow: $shadows-2xl;
+    max-width: none;
+    padding: 30px 24px 0px;
+}
+
+.mobile-menu-modal-close-btn { 
+    background: rgba(0, 0, 0, 0.06);
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: $radii-md;
+    transition-property: $transition_property_common;
+    transition-duration: $transition-duration-normal;
+    font-size: 12px;
+    position: absolute;
+    top: 45px;
+    right: 15px;
+    place-self: end;
+    margin-left: auto;
+    border: 0;
+}
+
+.btn-svg {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: currentcolor;
+    vertical-align: middle;
+}
+
+.modal-body {
+    padding-inline-start: $space-6;
+    padding-inline-end: $space-6;
+    flex: 1 1 0%;
+    overflow: visible;
+    padding: 0px;   
+}
+
+.modal-nav {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 48px;
+}
+
+.modal-nav-link {
+    margin-bottom: 0px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    color: $global_black;
+    display: block;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    transition: color 0.15s ease-out 0s;
+    background: $global_white;
+    padding: 15px 18px 15px 32px;
+    height: initial;
+    width: $sizes-full;
+}
+
+.modal-nav-link-element {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nav-link-div {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: $fontWeights-medium;
+    letter-spacing: $letterSpacings-normal;
+    line-height: 1.5;
+    text-transform: initial;
+    white-space: initial;   
+}
+
+@media screen and (max-width: 768px) and (min-width: 576px) {
+
+    .mobile-menu-modal-content {
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        width: 100%;
+        transform: translateX(0%) translateY(0px) translateZ(0px);
+        max-width: 430px !important;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        outline: transparent solid 2px;
+        outline-offset: 2px;
+        z-index: $zIndices-modal;
+        max-height: 100vh;
+        background: $global_white;
+        color: inherit;
+        box-shadow: $shadows-lg;
+        max-width: none;
+        padding: 30px 24px 0px;
+    }
 }
