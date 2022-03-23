@@ -1,2 +1,2 @@
-# react-blog
-Blog in Reactjs with login and registration functionality
+# angular-expressjs-blog
+Blog in Angular and Express with login and registration functionality
