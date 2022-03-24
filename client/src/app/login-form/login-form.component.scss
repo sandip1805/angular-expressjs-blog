@@ -1,0 +1,111 @@
+@import "colors";
+@import "variables";
+
+.login-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 75%;
+    margin: 0px auto;
+}
+
+form{
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 50px 35px;
+    grid-column: span 12/ span 12;
+    width: 40%;
+    margin: 0px auto;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    background-color: $global_black;
+}
+
+form *{
+    color: $global_white;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+form h3{
+    font-size: 32px;
+    font-family: $fonts-body;
+    font-weight: $fontWeights-medium;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    font-family: $fonts-body;
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: $fontWeights-medium;
+}
+
+input{
+    font-family: $fonts-body;
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: $fontWeights-light;
+}
+
+::placeholder{
+    font-family: $fonts-body;
+    color: $global_white;
+}
+
+button{
+    font-family: $fonts-body;
+    margin-top: 50px;
+    width: 100%;
+    background-color: $global_white;
+    color: $global_black !important;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: $fontWeights-semibold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.social div{
+  width: 150px;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.27);
+  color: $global_white;
+  text-align: center;
+}
+
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+
+.social .fb{
+  margin-left: 25px;
+}
+
+.social i{
+  margin-right: 4px;
+}
+
+@media screen and (max-width: 576px) { 
+    form {
+        width: 95%;
+    }
+}

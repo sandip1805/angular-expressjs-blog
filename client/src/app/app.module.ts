@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,

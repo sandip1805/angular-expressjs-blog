@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'
+import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home.routing';
 
@@ -10,7 +11,8 @@ import { HomeRoutingModule } from './home.routing';
   ],
   imports: [
     BrowserModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ],
   providers: [],
 })

@@ -5,4 +5,25 @@
     background-size: cover;
     background-color: $global_white;
     overflow: hidden;
+
+    &-container {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0,1fr));;
+        width: 75%;
+        margin: 0px auto;
+
+        &-img-wrapper {
+            grid-column: span 6/span 6;
+            display: flex;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-content-wrapper {
+            grid-column: span 6/span 6;
+            display: flex;
+        }
+    }
 }

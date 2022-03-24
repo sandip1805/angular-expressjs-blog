@@ -100,10 +100,10 @@
 
     &-sticky-wrapper {
         height: 57.35px;
-        position: absolute;
         z-index: 100;
         width: 100%;
         background: $global_white;
+        margin-top: 30px;
 
         &-container {
             -webkit-transition: .3s all ease;
@@ -125,6 +125,9 @@
                 margin-right: auto;
                 margin-left: auto;
                 max-width: 75%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
                 &-site-navigation {
 
@@ -150,6 +153,27 @@
                                 padding-bottom: $space-2;
                                 padding-right: $space-10;
                             }
+                        }
+                    }
+                }
+
+                &-login {
+                    a {
+                        margin-left: $space-8;
+                        cursor: pointer;
+                        text-decoration: none;
+                        outline: transparent solid 2px;
+                        outline-offset: 2px;
+                        color: inherit;
+                        display: flex;
+                        -webkit-box-pack: start;
+                        justify-content: flex-start;
+                        transition: color 0.15s ease-out 0s;
+                        -webkit-box-align: center;
+                        align-items: center;
+
+                        &:hover {
+                            color: $global_accent;
                         }
                     }
                 }
