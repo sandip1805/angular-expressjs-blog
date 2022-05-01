@@ -8,6 +8,7 @@ import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     CommonModule,
     HomeModule,
     SharedModule,
-    CarouselModule
+    CarouselModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
