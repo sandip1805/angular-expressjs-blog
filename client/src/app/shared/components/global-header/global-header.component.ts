@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Link } from '../../models/menu.model';
 
 @Component({
@@ -11,7 +12,9 @@ export class GlobalHeaderComponent implements OnInit {
 
   menuItems:any = [];
 
-  constructor() {
+  constructor(
+    private router: Router,
+  ) {
     this.menuItems.push(new Link('Home', ''), new Link('Categories', ''), new Link('Home', ''), new Link('Politics', ''), new Link('Business', ''), new Link('Health', ''), new Link('Design', ''), new Link('Sport', ''), new Link('Contact', ''))
    }
 
@@ -21,6 +24,10 @@ export class GlobalHeaderComponent implements OnInit {
 
   onShowMobileMenuModal() {
     this.isModalOpen = !this.isModalOpen;    
+  }
+
+  onLoginIconClick() {
+    this.router.navigate(['/login']);
   }
 
 }
