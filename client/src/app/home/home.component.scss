@@ -5,6 +5,7 @@
     background-size: cover;
     background-color: $global_white;
     overflow: hidden;
+    padding: $space-28 0px;
 
     &-container {
         display: grid;
@@ -24,6 +25,8 @@
         &-content-wrapper {
             grid-column: span 6/span 6;
             display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
