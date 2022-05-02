@@ -1,19 +1,26 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "email": "Sebastian",
-        "password": "Eschweiler"
-      },
-      {
-        "id": 2,
-        "email": "Sebastian",
-        "password": "Eschweiler"
-      },
-      {
-        "id": 3,
-        "email": "Sebastian",
-        "password": "Eschweiler"
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "email": "Sebastian",
+      "password": "Eschweiler"
+    },
+    {
+      "email": "Rahul",
+      "password": "rahul9911",
+      "id": 2
+    },
+    {
+      "email": "Arcav99ffn8",
+      "password": "12345",
+      "id": 3
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Blog 1",
+      "description": "this is a test blog!"
+    }
+  ]
+}

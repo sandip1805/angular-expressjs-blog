@@ -43,7 +43,10 @@
         </div>
         <div class="navbar-sticky-wrapper-container-main-div-login">
           <a (click)="onLoginIconClick()">
-            <i class="fa-solid fa-user"></i>
+            <i [ngClass]="userStatus ? 'fa-solid fa-power-off' : 'fa-solid fa-user'" [title]="userStatus ? 'logout' : 'login'"></i>
+          </a>
+          <a (click)="onSignUpIconClick()" *ngIf="!userStatus">
+            <i class="fa-solid fa-user-plus" [title]="'signup'"></i>
           </a>
         </div>
       </div>
@@ -55,6 +58,12 @@
         <h1>
           <a routerLink="/home">Blog</a>
         </h1>
+        <a class="navbar-mobile-container-wrapper-logo-user" (click)="onLoginIconClick()">
+          <i [ngClass]="userStatus ? 'fa-solid fa-power-off' : 'fa-solid fa-user'" [title]="userStatus ? 'logout' : 'login'"></i>
+        </a>
+        <a (click)="onSignUpIconClick()" class="navbar-mobile-container-wrapper-logo-user">
+          <i class="fa-solid fa-user-plus" [title]="'signup'"></i>
+        </a>
         <a
           (click)="onShowMobileMenuModal()"
           class="navbar-mobile-container-wrapper-logo-hamburger-icon"

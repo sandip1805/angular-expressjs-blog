@@ -1,0 +1,29 @@
+<section class="login-container">
+    <form [formGroup]="form">
+        <h3>{{queryParams?.isSignUp ? 'Signup' : 'Login'}} Here</h3>
+
+        <label for="username">Username</label>
+        <input 
+          type="text" 
+          placeholder="Email or Phone"
+          id="username"
+          [formControlName]="'userName'"
+        >
+
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          placeholder="Password" 
+          id="password"
+          [formControlName]="'password'"
+          [maxlength]="10"
+        >
+
+        <button type="submit" (click)="onLogIn()">{{queryParams?.isSignUp ? 'Signup' : 'Login'}}</button>
+        <div class="social">
+          <div class="go"><button><i class="fab fa-google"></i>  Google</button></div>
+          <div class="fb"><button><i class="fa-brands fa-facebook"></i>  Facebook</button></div>
+          <div class="back"><button (click)="navigateToHomePage()"><i class="fa-solid fa-angles-left"></i>  Back</button></div>
+        </div>
+    </form>
+</section>

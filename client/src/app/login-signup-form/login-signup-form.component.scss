@@ -87,16 +87,38 @@ button{
   width: 150px;
   border-radius: 3px;
   padding: 10px;
-  background-color: rgba(255,255,255,0.27);
   color: $global_white;
   text-align: center;
 }
 
-.social div:hover{
-  background-color: rgba(255,255,255,0.47);
+.social button {
+  width: 100%;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.27);
+  color: $global_white;
+  text-align: center;
+  margin-top: 0px;
+  color: #ffffff !important;
+  font-weight: $fontWeights-normal;
+  font-size: $fontSizes-md;
+}
+
+.social button:hover {
+  width: 100%;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.27);
+  color: $global_white;
+  text-align: center;
+  margin-top: 0px;
 }
 
 .social .fb{
+  margin-left: 25px;
+}
+
+.social .back{
   margin-left: 25px;
 }
 
@@ -104,8 +126,27 @@ button{
   margin-right: 4px;
 }
 
+
 @media screen and (max-width: 576px) { 
     form {
         width: 95%;
+    }
+
+    .social {
+      display: block;
+      width: 100%;
+    }
+
+    .social div {
+      width: 100%;
+      padding: 10px 0px;
+    }
+
+    .social .fb{
+      margin-left: 0px;
+    }
+    
+    .social .back{
+      margin-left: 0px;
     }
 }
