@@ -35,7 +35,7 @@
             >
               <ul class="mr-auto pl-0">
                 <li class="active" *ngFor="let item of menuItems; index as i">
-                  <a href="index.html" class="text-left">{{item?.name}}</a>
+                  <button (click)="onNavLinkClick(item)" class="text-left">{{item?.name}}</button>
                 </li>
               </ul>
             </nav>

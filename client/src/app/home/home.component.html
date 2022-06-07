@@ -1,11 +1,52 @@
-<app-global-header></app-global-header>
-<section class="slider-section">
-    <div class="slider-section-container">
-        <div class="slider-section-container-img-wrapper">
-            <img src="../../assets/images/home_slider_1.jpg">
-        </div>
-        <div class="slider-section-container-content-wrapper">
-            <h1>Hello</h1>
+<app-global-header
+    (updateData)="onSaveBlog()"
+></app-global-header>
+
+<section class="post-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="politics-title">
+                    <h5>Politics</h5>
+                </div>
+                <div class="politics-posts d-flex" *ngFor="let item of politicsData">
+                    <div class="politics-posts-thumbnail">
+                        <img class="img-thumbnail" src="../../assets/images/thumbnail_1.jpg">
+                    </div>
+                    <div class="politics-contents">
+                        <h2>
+                            <a href="blog-single.html">{{item?.title}}</a>
+                        </h2>
+                        <p class="mb-3">
+                            {{item?.description}}
+                        </p>
+                        <div class="politics-contents-meta">
+                            <span class="date-read fw-normal">{{item?.date | date:'mediumDate'}} <span class="mx-1">•</span> 3 min read <span class="icon-star2"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="business-title">
+                    <h5>Business</h5>
+                </div>
+                <div class="business-posts d-flex" *ngFor="let item of businessData">
+                    <div class="business-posts-thumbnail">
+                        <img class="img-thumbnail" src="../../assets/images/thumbnail_2.jpg">
+                    </div>
+                    <div class="business-contents">
+                        <h2>
+                            <a href="blog-single.html">{{item?.title}}</a>
+                        </h2>
+                        <p class="mb-3">
+                            {{item?.description}}
+                        </p>
+                        <div class="business-contents-meta">
+                            <span class="date-read fw-normal">{{item?.date | date:'mediumDate'}} <span class="mx-1">•</span> 3 min read <span class="icon-star2"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

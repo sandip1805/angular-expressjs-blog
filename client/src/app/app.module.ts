@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -12,6 +12,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSummernoteModule } from 'ngx-summernote';
+import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -29,9 +32,15 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ToastrModule.forRoot(), // ToastrModule added
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSummernoteModule,
+    NgbModule,
+    MDBBootstrapModule.forRoot(),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [NgbActiveModal],
+  bootstrap: [AppComponent],
+  exports: [
+  ]
 })
 export class AppModule { }

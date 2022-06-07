@@ -1,32 +1,115 @@
 @import "colors";
 @import "variables";
 
-.slider-section {
+.post-section {
     background-size: cover;
     background-color: $global_white;
     overflow: hidden;
-    padding: $space-28 0px;
+    padding: $space-20 0px;
+}
 
-    &-container {
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0,1fr));;
-        width: 75%;
-        margin: 0px auto;
+.politics-title {
+    margin-bottom: 50px;
 
-        &-img-wrapper {
-            grid-column: span 6/span 6;
-            display: flex;
+    h5 {
+        font-size: 20px;
+        font-weight: $fontWeights-normal;
+        border-bottom: 1px solid $global_black;
+        position: relative;
+        display: inline-block;
+    }
+}
 
-            img {
-                width: 100%;
+.politics-posts {
+    margin-bottom: 30px;
+}
+
+.politics-posts-thumbnail {
+    width: 30%;
+}
+
+.business-title {
+    margin-bottom: 50px;
+
+    h5 {
+        font-size: 20px;
+        font-weight: $fontWeights-normal;
+        border-bottom: 1px solid $global_black;
+        position: relative;
+        display: inline-block;
+    }
+}
+
+.business-posts {
+    margin-bottom: 30px;
+}
+
+.business-posts-thumbnail {
+    width: 30%;
+}
+
+.politics-contents {
+    width: 70%;
+    padding: 10px 20px;
+
+    h2 {
+        font-size: 15px;
+
+        a {
+            color: $global_black;
+            text-decoration: underline !important;
+        }
+    }
+
+    p {
+        color: $global_dark_gray;
+        line-height: $lineHeights-6;
+        font-weight: $fontWeights-normal;
+        font-size: $fontSizes-sm-md;
+    }
+
+    &-meta {
+        font-size: $fontSizes-sm;
+
+        span {
+            color: $global_dark_gray;
+
+            a {
+                color: $global_accent;
             }
         }
+    }
+}
 
-        &-content-wrapper {
-            grid-column: span 6/span 6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+.business-contents {
+    width: 70%;
+    padding: 10px 20px;
+
+    h2 {
+        font-size: 15px;
+
+        a {
+            color: $global_black;
+            text-decoration: underline !important;
+        }
+    }
+
+    p {
+        color: $global_dark_gray;
+        line-height: $lineHeights-6;
+        font-weight: $fontWeights-normal;
+        font-size: $fontSizes-sm-md;
+    }
+
+    &-meta {
+        font-size: $fontSizes-sm;
+
+        span {
+            color: $global_dark_gray;
+
+            a {
+                color: $global_accent;
+            }
         }
     }
 }

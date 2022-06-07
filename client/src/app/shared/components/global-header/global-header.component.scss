@@ -139,7 +139,7 @@
                         li {
                             display: inline-block;
 
-                            a {
+                            button {
                                 color: $global_black;
                                 padding-left: 0;
                                 text-transform: uppercase;
@@ -152,6 +152,9 @@
                                 padding-top: $space-2;
                                 padding-bottom: $space-2;
                                 padding-right: $space-10;
+                                border: none;
+                                background-color: transparent;
+                                cursor: pointer;
                             }
                         }
                     }

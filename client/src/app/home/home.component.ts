@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../shared/services/user.service';
+import { Blog, Blogs } from '../shared/models/blog.model';
+import { BlogsService } from '../shared/services/blogs.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,26 @@ import { UserService } from '../shared/services/user.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  politicsData!: Blog[];
+  businessData!: Blog[];
 
-  constructor() { }
+  constructor(
+    private blogSvc: BlogsService,
+  ) { }
 
   ngOnInit(): void {
-    
+    this.loadData();
+  }
+
+  loadData() {
+    this.blogSvc.getBlogs().subscribe((res: Blogs) => {
+      console.log(res);
+      this.politicsData = res?.politics;
+      this.businessData = res?.business;
+    })
+  }
+
+  onSaveBlog() {
+    this.loadData();
   }
 }
